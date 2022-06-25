@@ -1,0 +1,12 @@
+overwrite: true
+schema: "https://api.thegraph.com/subgraphs/name/clockride/apollo42-marketplace"
+documents: "src/**/*.{gql,graphql}"
+generates:
+  src/generated/schema.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"

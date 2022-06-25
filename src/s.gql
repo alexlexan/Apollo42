@@ -1,0 +1,6 @@
+query getSales {
+  sales(first: 8) {
+    id
+    price
+  }
+}
