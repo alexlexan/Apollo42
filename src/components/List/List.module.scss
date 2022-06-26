@@ -1,0 +1,25 @@
+.container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.wrapper{
+  --column: 4;
+  display: grid;
+  grid-template-columns: repeat(var(--column),1fr);
+  gap: 50px;
+  max-width: 1282px;
+  width: 100%;
+  align-items: flex-end;
+
+  @media (max-width: 1280px) {
+      --column: 3
+  }
+  @media (max-width: 1024px) {
+    --column: 2
+  }
+  @media (max-width: 768px) {
+    --column: 1;
+    gap: 16px;
+  }
+}

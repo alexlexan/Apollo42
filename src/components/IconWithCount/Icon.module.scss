@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    .active {
+        opacity: 1;
+    }
+}
+
+.text {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    opacity: 0.3;
+    transition: opacity 0.5s ease;
+    letter-spacing: 0.1em;
+}

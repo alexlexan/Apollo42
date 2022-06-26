@@ -1,0 +1,32 @@
+.logo {
+    margin-bottom: 78px;
+    @media (max-width: 1200px) {
+        margin-bottom: 12px;
+    }
+}
+
+.titleContainer {
+    margin-bottom: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap:6px;
+        margin-bottom: 24px;
+    }
+}
+
+.title {
+    font-weight: 300;
+    font-size: 65px;
+    line-height: 85px;
+
+    background: linear-gradient(95.47deg, #F7FBFF 68.9%, rgba(247, 251, 255, 0) 189.5%);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
