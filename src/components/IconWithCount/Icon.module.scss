@@ -1,11 +1,17 @@
 .container {
+    --active-color: #FFFFFF;
     display: flex;
     gap: 10px;
     align-items: center;
 
-    .active {
-        opacity: 1;
+
+    svg path {
+        opacity: 0.3;
+        stroke: #FFFFFF;
+        transition: all 0.5s ease;
     }
+
+ 
 }
 
 .text {
@@ -13,6 +19,32 @@
     font-size: 12px;
     line-height: 18px;
     opacity: 0.3;
-    transition: opacity 0.5s ease;
+    transition: all 0.5s ease;
     letter-spacing: 0.1em;
+}
+
+.active {
+    .text {
+        opacity: 1;
+        color: var(--active-color);
+    }
+    svg path {
+        opacity: 1;
+        stroke: var(--active-color);
+    }
+}
+
+.red{
+    --active-color: #FF70B4;
+}
+
+.blue{
+    --active-color: rgb(150, 100, 224);
+}
+
+.icon {
+    &:hover  path {
+        stroke: var(--active-color);
+        opacity: 1;
+    }
 }

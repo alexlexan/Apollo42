@@ -2,15 +2,17 @@ import { FC } from "react";
 import classes from "./Card.module.scss";
 import Image from "../../images/Image1.png";
 import { ReactComponent as Eye } from "../../images/Eye.svg";
+import { ReactComponent as Like } from "../../images/LikeIcon.svg";
+import { ReactComponent as Message } from "../../images/MessageIcon.svg";
 import IconWithCount from "../IconWithCount";
 
 type Props = {
-  price: number;
+  price?: string | null;
   ownerId: string;
   approvalId: string;
 };
 
-export const Card: FC<Props> = () => {
+export const Card: FC<Props> = ({ ownerId, price, approvalId }) => {
   return (
     <>
       <div className={classes.container}>
@@ -30,7 +32,9 @@ export const Card: FC<Props> = () => {
                   className={classes.portrait}
                 />
                 <div className={classes.nameContainer}>
-                  <span className={classes.userName}>Hayden</span>
+                  <span className={classes.userName}>
+                    {ownerId.split(".")[0]}
+                  </span>
                   <span className={classes.date}>7 DAYS AGO</span>
                 </div>
               </div>
@@ -43,13 +47,19 @@ export const Card: FC<Props> = () => {
             </div>
 
             <div className={classes.priceInfoContainer}>
-              <span className={classes.name}>#4 Cloud Cofee</span>
-              <span className={classes.price}>0.55 NEAR</span>
+              <span className={classes.name}>
+                #{approvalId}
+                <br />
+                Sunset
+              </span>
+              <span className={classes.price}>
+                {Number(price || 0) / 10 ** 24} NEAR
+              </span>
             </div>
           </div>
           <div className={classes.animContainer}>
-            <IconWithCount Component={Eye} />
-            <IconWithCount Component={Eye} />
+            <IconWithCount Component={Like} color="red" />
+            <IconWithCount Component={Message} color="blue" />
           </div>
         </div>
       </div>

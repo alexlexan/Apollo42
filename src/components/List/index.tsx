@@ -10,7 +10,7 @@ const List = () => {
         {data?.sales?.map(({ price, id, approvalId, ownerId }) => (
           <Card
             key={id}
-            price={24 / 24}
+            price={price}
             ownerId={ownerId}
             approvalId={approvalId}
           />
