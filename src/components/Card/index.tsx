@@ -16,6 +16,7 @@ export const Card: FC<Props> = ({ ownerId, price, approvalId }) => {
   return (
     <>
       <div className={classes.container}>
+        <span className={classes.shadow} />
         <div className={classes.imageContainer}>
           <img src={Image} className={classes.image} alt="sell" />
         </div>

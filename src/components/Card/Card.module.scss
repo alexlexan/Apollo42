@@ -4,6 +4,7 @@
     border-radius: 45px;
     transition: all 0.5s ease;
     cursor: pointer;
+    background: linear-gradient(181.09deg, rgba(43, 51, 64, 0.7) 0.93%, rgba(43, 51, 64, 0) 110.1%);
 
 
     @media (min-width: 769px) {
@@ -11,6 +12,7 @@
     &:hover {
         &::before {
             opacity: 1;
+            
         }
         .imageContainer, .innerWrapperContent{
            transform: translateY(-57px);
@@ -26,6 +28,7 @@
 
         .imageContainer::before{
             opacity: 0;
+            
         }
         .name, .animContainer{
             opacity: 1;
@@ -52,8 +55,11 @@
         opacity: 0;
         filter: blur(15px);
         transition: opacity 0.2s ease;
+
+        will-change: filter;
     }
 }
+
 
 .maskBg{
     position: absolute;
@@ -94,6 +100,8 @@
         opacity: 0.8;
         filter: blur(15px);
         transition: opacity 0.2s ease;
+
+        will-change: filter;
     }
 }
 
@@ -109,6 +117,11 @@
     height: 393px;
     box-shadow: 0px 4px 35px 0px #00000026;
     background: linear-gradient(181.09deg, rgba(43, 51, 64, 0.7) 0.93%, rgba(43, 51, 64, 0) 110.1%);
+
+    @supports (backdrop-filter: none){
+        backdrop-filter: blur(25px);
+        
+    }
 }
 
 .userInfoContainer {
